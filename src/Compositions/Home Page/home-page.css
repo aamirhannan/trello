@@ -9,7 +9,7 @@
         background-color: white;
         border-radius: 12px;
         width:fit-content;
-        /* min-width: 100%; */
+        min-width: calc(100vw - 235px);
         height: 100%;
         padding: 24px;
         overflow: auto;

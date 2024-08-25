@@ -1,6 +1,6 @@
 import { Button, CircularProgress, Skeleton } from "@mui/material";
 import React from "react";
-import "./buttons.css";
+import "./button.css";
 
 function SecondaryBtn(props) {
   const btnIcon2 = props.btnIcon2;

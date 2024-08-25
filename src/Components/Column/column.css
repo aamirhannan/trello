@@ -1,44 +1,59 @@
-.column-outer-container{
-    /* max-width: 400px; */
-    width: 400px;
-    height: fit-content;
-    min-height: 100px;
-    border: 1px solid lightgray;
-    border-radius: 8px;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+.board-container{
 
-    .add-item{
-        width: 95%;
+    .board-title{
+        padding-bottom: 18px;
     }
-
-    .item{
-        width: 95%;
-        border: 1px solid lightgray;
-        border-radius: 12px;
-        padding: 8px;
-
-        .item-top-section{
+    .board{
+        display: flex;
+        gap: 24px;
+        .columns-outer-container{
             display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
+            flex-wrap: nowrap;
             gap: 12px;
+            .column-container{
+                /* max-width: 400px; */
+                width: 400px;
+                height: fit-content;
+                min-height: 100px;
+                border: 1px solid lightgray;
+                border-radius: 8px;
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
             
+                .add-item{
+                    width: 95%;
+                }
+            
+                .item{
+                    width: 95%;
+                    border: 1px solid lightgray;
+                    border-radius: 12px;
+                    padding: 8px;
+            
+                    .item-top-section{
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        gap: 12px;
+                        
+                    }
+            
+                    .item-bottom-section{
+                        display: flex;
+                        justify-content: space-between;
+                        /* align-items: flex-end;
+                        justify-content: flex-end; */
+                        /* gap: 12px; */
+                        font-size: 12px;
+                        padding-top: 12px;
+                    }
+            
+                }
+            }
         }
-
-        .item-bottom-section{
-            display: flex;
-            justify-content: space-between;
-            /* align-items: flex-end;
-            justify-content: flex-end; */
-            /* gap: 12px; */
-            font-size: 12px;
-            padding-top: 12px;
-        }
-
     }
 }

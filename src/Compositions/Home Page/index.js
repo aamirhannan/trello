@@ -7,6 +7,9 @@ const HomePage = () => {
   const [columnList, setColumnList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [activeBoard, setActiveBoard] = useState();
+  const [allBoardList, setAllBoardList] = useState();
+
   const getAllColumns = () => {
     const kanbanData = {
       boards: [
@@ -15,18 +18,18 @@ const HomePage = () => {
           title: "Project Board 1",
           lists: [
             {
-              id: 1,
+              id: 101,
               title: "To Do",
               cards: [
                 {
-                  id: 1,
+                  id: 1001,
                   title: "Task 1",
                   description: "Description of Task 1",
                   status: "to-do",
                   createdOn: "2024-08-01",
                 },
                 {
-                  id: 2,
+                  id: 1002,
                   title: "Task 2",
                   description: "Description of Task 2",
                   status: "to-do",
@@ -35,11 +38,11 @@ const HomePage = () => {
               ],
             },
             {
-              id: 2,
+              id: 102,
               title: "In Progress",
               cards: [
                 {
-                  id: 3,
+                  id: 1003,
                   title: "Task 3",
                   description: "Description of Task 3",
                   status: "in-progress",
@@ -48,11 +51,11 @@ const HomePage = () => {
               ],
             },
             {
-              id: 3,
+              id: 103,
               title: "Done",
               cards: [
                 {
-                  id: 4,
+                  id: 1004,
                   title: "Task 4",
                   description: "Description of Task 4",
                   status: "done",
@@ -66,6 +69,8 @@ const HomePage = () => {
     };
 
     setColumnList(kanbanData);
+    setActiveBoard(kanbanData.boards[0]);
+    setAllBoardList(kanbanData.boards);
   };
 
   useEffect(() => {
@@ -78,12 +83,22 @@ const HomePage = () => {
     return <CircularProgress />;
   }
 
+  const handleClick = () => {
+    console.log("activeBoard", activeBoard);
+    console.log("allBoardList", allBoardList);
+  };
+
   return (
     <div className="home-page-outer-container">
+      {/* <button onClick={handleClick}> click me</button> */}
       <div className="home-page-inner-container">
-        {columnList.boards[0]["lists"].map((column) => (
-          <Column key={column.id} column={column} />
-        ))}
+        <Column
+          key={activeBoard.id}
+          activeBoard={activeBoard}
+          allBoardList={allBoardList}
+          setActiveBoard={setActiveBoard}
+          setAllBoardList={setAllBoardList}
+        />
       </div>
     </div>
   );
