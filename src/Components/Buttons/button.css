@@ -1,0 +1,248 @@
+@media only screen and (max-width: 1700px) {
+
+    button.primary-btn,
+    button.secondary-btn,
+    button.link-btn,
+    button.purple-btn,
+    button.icon-text-btn {
+        padding: 4px 12px !important;
+
+        &.no-padding {
+            padding: 0 !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+
+    button.primary-btn,
+    button.secondary-btn,
+    button.link-btn,
+    button.purple-btn,
+    button.icon-text-btn {
+        font-size: 12px !important;
+        padding: 4px 12px !important;
+
+        &.no-padding {
+            padding: 0 !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    button.primary-btn,
+    button.secondary-btn,
+    button.link-btn,
+    button.purple-btn,
+    button.icon-text-btn {
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+
+        &.no-padding {
+            padding: 0 !important;
+        }
+    }
+}
+
+
+button {
+    min-width: 0;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    &.full{
+        width: 100%;
+    }
+}
+
+button.primary-btn {
+    background: var(--colorPinkVioletGradient);
+    color: white;
+    text-transform: capitalize;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    font-family: Poppins, "Poppins", -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+
+    &.smaller {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        color: white;
+    }
+
+    &.lightshade {
+        color: #622AC2 !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        background: rgba(253, 140, 185, 0.15) !important;
+    }
+}
+
+button.secondary-btn {
+    background: white;
+    color: var(--colorPrimary);
+    text-transform: capitalize;
+    border-radius: 8px;
+    border: 1px solid var(--colorPrimary);
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    font-family: Poppins, "Poppins", -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+
+    &.dull {
+        color: var(--colorLightGray);
+        border: 1px solid var(--colorLightGray);
+    }
+
+    &.rounded {
+        border-radius: 24px !important;
+    }
+
+    &.no-border {
+        border: none !important;
+    }
+
+    &.smaller {
+        padding: 4px 10px;
+        font-size: 12px;
+        border-radius: 4px;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        color: var(--colorPrimary);
+    }
+}
+
+button.link-btn {
+    background: transparent;
+    color: var(--colorPrimary);
+    text-transform: capitalize;
+    font-size: 14px;
+    width: fit-content;
+    min-width: 0;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    font-family: Poppins, "Poppins", -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        color: var(--colorPrimary);
+    }
+}
+
+
+button.purple-btn {
+    background: #622ac2;
+    color: white;
+    text-transform: capitalize;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    font-family: Poppins, "Poppins", -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+
+    &:hover {
+        background: #622ac2;
+    }
+
+    &.smaller {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+
+    &.big {
+        font-size: 24px;
+    }
+
+    &.gradient {
+        background: var(--colorPrimaryLightGradientH);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        color: white;
+    }
+}
+
+button.icon-text-btn {
+    background: transparent;
+    color: var(--colorLightGray);
+    text-transform: capitalize;
+    font-size: 14px;
+    width: fit-content;
+    min-width: 0;
+    font-weight: 400;
+
+    letter-spacing: 0.7px;
+    font-family: Poppins, "Poppins", -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+
+    &.no-border {
+        border: none !important;
+    }
+
+    &.no-padding {
+        padding: 0;
+    }
+
+    &.colored {
+        color: var(--colorPrimary);
+
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        color: var(--colorLightGray);
+    }
+}
+
+.disable-button {
+    /* // background: var(--colorLightGray);
+    // background: gray;
+    // border: 1px solid var(--colorLightGray); */
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button {
+    position: relative;
+}
+
+span.skeleton-btn {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--colorPrimaryHalfLight);
+    cursor: progress;
+}
