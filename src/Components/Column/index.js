@@ -162,6 +162,8 @@ const Column = ({
         return board;
       });
     });
+
+    setSelectedItemData(null);
   };
 
   const handleItemCreation = (columnID, boardID) => {

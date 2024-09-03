@@ -42,7 +42,7 @@ export default function AddItemToRowModal({
 }) {
   const [userInput, setUserInput] = useState({
     title: "",
-    status: "active",
+    status: "",
     description: "",
   });
 
@@ -81,8 +81,12 @@ export default function AddItemToRowModal({
 
     updateActiveBoardCard(selectedItemData.itemID, updatedItem);
     handleClose();
+    resetUserInput();
   };
 
+  const resetUserInput = () => {
+    setUserInput({ title: "", status: "", description: "" });
+  };
   const handleAddItemToRowCreation = () => {
     console.log("add new item to row");
     // console.log(columnID, boardID);
@@ -103,8 +107,8 @@ export default function AddItemToRowModal({
     if (isvalid) {
       setRowCreationLoading(true);
       addItemToColumn(newItem, columnID, boardID);
+      resetUserInput();
       setTimeout(() => {
-        setUserInput({ title: "", status: "active", description: "" });
         setRowCreationLoading(false);
         handleClose();
       }, 1000);
@@ -191,7 +195,13 @@ export default function AddItemToRowModal({
             ></span>
           </div>
           <div className="row-action-container">
-            <SecondaryBtn btnText={"Cancel"} btnClick={handleClose} />
+            <SecondaryBtn
+              btnText={"Cancel"}
+              btnClick={() => {
+                handleClose();
+                resetUserInput();
+              }}
+            />
             {selectedItemData ? (
               <PurpleBtn btnText="Update" btnClick={handleUpdateExistingItem} />
             ) : (
