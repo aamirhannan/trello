@@ -14,52 +14,56 @@ const HomePage = () => {
     const kanbanData = {
       boards: [
         {
-          id: 1,
-          title: "Project Board 1",
+          boardID: "board-001",
+          title: "Project Alpha",
           lists: [
             {
-              id: 101,
+              columnID: "list-001",
               title: "To Do",
               cards: [
                 {
-                  id: 1001,
-                  title: "Task 1",
-                  description: "Description of Task 1",
-                  status: "to-do",
-                  createdOn: "2024-08-01",
+                  itemID: "card-001",
+                  title: "Implement user authentication",
+                  description: "Set up JWT-based authentication system",
+                  status: "TODO",
+                  createdOn: "2023-06-15",
+                  priority: "HIGH",
                 },
                 {
-                  id: 1002,
-                  title: "Task 2",
-                  description: "Description of Task 2",
-                  status: "to-do",
-                  createdOn: "2024-08-02",
+                  itemID: "card-002",
+                  title: "Design database schema",
+                  description: "Create ERD for the new inventory module",
+                  status: "TODO",
+                  createdOn: "2023-06-16",
+                  priority: "MEDIUM",
                 },
               ],
             },
             {
-              id: 102,
+              columnID: "list-002",
               title: "In Progress",
               cards: [
                 {
-                  id: 1003,
-                  title: "Task 3",
-                  description: "Description of Task 3",
-                  status: "in-progress",
-                  createdOn: "2024-08-03",
+                  itemID: "card-003",
+                  title: "Refactor API endpoints",
+                  description: "Optimize existing API for better performance",
+                  status: "IN_PROGRESS",
+                  createdOn: "2023-06-14",
+                  priority: "HIGH",
                 },
               ],
             },
             {
-              id: 103,
+              columnID: "list-003",
               title: "Done",
               cards: [
                 {
-                  id: 1004,
-                  title: "Task 4",
-                  description: "Description of Task 4",
-                  status: "done",
-                  createdOn: "2024-08-04",
+                  itemID: "card-004",
+                  title: "Set up CI/CD pipeline",
+                  description: "Implement automated testing and deployment",
+                  status: "DONE",
+                  createdOn: "2023-06-10",
+                  priority: "HIGH",
                 },
               ],
             },
@@ -72,6 +76,8 @@ const HomePage = () => {
     setActiveBoard(kanbanData.boards[0]);
     setAllBoardList(kanbanData.boards);
   };
+
+  
 
   useEffect(() => {
     setIsLoading(true);
@@ -93,7 +99,7 @@ const HomePage = () => {
       {/* <button onClick={handleClick}> click me</button> */}
       <div className="home-page-inner-container">
         <Column
-          key={activeBoard.id}
+          key={activeBoard.boardID}
           activeBoard={activeBoard}
           allBoardList={allBoardList}
           setActiveBoard={setActiveBoard}
